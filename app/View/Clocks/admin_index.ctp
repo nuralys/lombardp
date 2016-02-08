@@ -1,5 +1,5 @@
 <a href="/admin/clocks/add">Добавить материал</a>
-<?php debug($data); ?>
+<?php //debug($data); ?>
 <ul>
 <?php foreach($data as $item): ?>
 	<li><img src="/img/clock/thumbs/<?=$item['Clock']['img']?>"><p><?=$item['Clock']['name']?></p>

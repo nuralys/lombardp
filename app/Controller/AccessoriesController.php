@@ -1,8 +1,8 @@
 <?php
 
-class ClocksController extends AppController{
+class AccessoriesController extends AppController{
 
-	public $uses = array('Clock', 'Brand', 'Housing');
+	public $uses = array('Accessory', 'Brand', 'Housing');
 
 	public function index(){
 		$brands = $this->Brand->find('list');
@@ -18,42 +18,42 @@ class ClocksController extends AppController{
 		if(!empty($where)){
 				$where = implode($where, " AND ");
 			}
-		$sql = "SELECT `Clock`.`id`, `Clock`.`brand_id`, `Clock`.`name`, `Clock`.`price`, `Clock`.`img`, `Clock`.`collection`, `Clock`.`sex`, `Clock`.`reference`, `Clock`.`type`, `Clock`.`housing_id`, `Clock`.`watertightness`, `Clock`.`housing_diameter`, `Clock`.`glass`, `Clock`.`dial_color`, `Clock`.`type_mechanism`, `Clock`.`options`, `Clock`.`power_reserve`, `Clock`.`caliber`, `Clock`.`band_material`, `Clock`.`equipment`, `Clock`.`condition_clock`, `Brand`.`id`, `Brand`.`title`, `Housing`.`id`, `Housing`.`title` FROM `lombardp_ac`.`clocks` AS `Clock` LEFT JOIN `lombardp_ac`.`brands` AS `Brand` ON (`Clock`.`brand_id` = `Brand`.`id`) LEFT JOIN `lombardp_ac`.`housings` AS `Housing` ON (`Clock`.`housing_id` = `Housing`.`id`)";
+		$sql = "SELECT `Accessory`.`id`, `Accessory`.`brand_id`, `Accessory`.`name`, `Accessory`.`price`, `Accessory`.`img`, `Accessory`.`collection`, `Accessory`.`sex`, `Accessory`.`reference`, `Accessory`.`type`, `Accessory`.`housing_id`, `Accessory`.`watertightness`, `Accessory`.`housing_diameter`, `Accessory`.`glass`, `Accessory`.`dial_color`, `Accessory`.`type_mechanism`, `Accessory`.`options`, `Accessory`.`power_reserve`, `Accessory`.`caliber`, `Accessory`.`band_material`, `Accessory`.`equipment`, `Accessory`.`condition_clock`, `Brand`.`id`, `Brand`.`title`, `Housing`.`id`, `Housing`.`title` FROM `lombardp_ac`.`clocks` AS `Accessory` LEFT JOIN `lombardp_ac`.`brands` AS `Brand` ON (`Accessory`.`brand_id` = `Brand`.`id`) LEFT JOIN `lombardp_ac`.`housings` AS `Housing` ON (`Accessory`.`housing_id` = `Housing`.`id`)";
 		if(isset($where) && $where!=''){
 				$sql .= " WHERE ".$where;
 			}
 			// debug($where);
-		$data = $this->Clock->query($sql);
+		$data = $this->Accessory->query($sql);
 		$title_for_layout = 'Купить дорогие швейцарские часы бу Астана';
 		$this->set(compact('data', 'title_for_layout', 'brands'));
 	}
 
 	public function view($id){
-		if(is_null($id) || !(int)$id || !$this->Clock->exists($id)){
+		if(is_null($id) || !(int)$id || !$this->Accessory->exists($id)){
 			throw new NotFoundException('Такой страницы нет...');
 		}
-		$data = $this->Clock->findById($id);
+		$data = $this->Accessory->findById($id);
 		// $filters = $this->Filter->find('all');
 		$this->set(compact('data'));
 	}
 
 	public function admin_index(){
-		$data = $this->Clock->find('all');
-		$title_for_layout = 'Часы';
+		$data = $this->Accessory->find('all');
+		$title_for_layout = 'Аксессуары';
 		$this->set(compact('data', 'title_for_layout'));
 	}
 
 	public function admin_add(){
 		if($this->request->is('post')){
-			$this->Clock->create();
-			$data = $this->request->data['Clock'];
+			$this->Accessory->create();
+			$data = $this->request->data['Accessory'];
 			// debug($this->request->data);
 			// debug($data);
 			 if(!$data['img']['name']){
 			 	unset($data['img']);
 			}
 
-			if($this->Clock->save($data)){
+			if($this->Accessory->save($data)){
 				$this->Session->setFlash('Сохранено', 'default', array(), 'good');
 				// debug($data);
 				return $this->redirect($this->referer());
@@ -62,7 +62,7 @@ class ClocksController extends AppController{
 			}
 		}
 		$brands = $this->Brand->find('list', array(
-			'conditions' => array('type' => 'clocks')
+			'conditions' => array('type' => 'accessories')
 		));
 		$housings = $this->Housing->find('list');
 		$title_for_layout = 'Добавление нового материала';
