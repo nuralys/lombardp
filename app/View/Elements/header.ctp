@@ -28,6 +28,19 @@
 				<input type="search" class="m_input" name="search" placeholder="Поиск" style="display: none;">
 			</div>
 			<a href="tel:+7 (495) 215-21-15 " class="m_number">+7 (495) 215-21-15 </a>
+			<div class="mob_part">
+				<ul class="mob_ul">
+					<li class="active"><a href="/">Швейцарские часы</a></li>
+					<li><a href="news.html">Аксессуары</a></li>
+					<li><a href="#">Ювелирные украшения</a></li>
+					<li><a href="#">О часовом ломбарде</a></li>
+					<li><a href="#">Залог часов</a></li>
+					<li><a href="#">Продать часы</a></li>
+					<li><a href="#">Экспертиза и оценка</a></li>
+					<li><a href="#">Контакты</a></li>
+				</ul>
+				<div class="mob_close"></div>
+			</div>
 		</div>
 	</div>
 	<div class="middle_h">
