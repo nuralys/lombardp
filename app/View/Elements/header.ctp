@@ -1,6 +1,8 @@
 <header>
 	<div class="top_header">
 		<div class="cr">
+			<div class="m_menu">
+			</div>
 			<nav class="up_nav">
 				<ul>
 					<li><a href="about.html">О часовом ломбарде</a></li>
@@ -21,37 +23,54 @@
 					<a href="#"></a>
 				</li>
 			</ul>
+			<div class="m_phone"></div>
+			<div class="m_search">
+				<input type="search" class="m_input" name="search" placeholder="Поиск" style="display: none;">
+			</div>
+			<a href="tel:+7 (495) 215-21-15 " class="m_number">+7 (495) 215-21-15 </a>
 		</div>
 	</div>
 	<div class="middle_h">
-		<div class="cr">
-			<div class="up_part">
-				<div class="num">
-					<button class="search"></button>
-					<div class="num_text">
-						<a href="">+7 (495) 215-21-15 </a>
-						<a href="">8 (800) 555-95-99</a>
-						<button class="call_back" href="#">Перезвоните мне</button>
+					<div class="cr">
+						<div class="up_part">
+							<div class="num">
+								<button class="search">
+									<input type="search" class="s_input" name="search" placeholder="Поиск"/>
+								</button>
+								<div class="num_text">
+									<a href="">+7 (495) 215-21-15 </a>
+									<a href="">8 (800) 555-95-99</a>
+									<button class="call_back" href="#">Перезвоните мне</button>
+								</div>
+							</div>
+							<div class="logo">
+								<a href="#"><img src="img/logo.svg"/></a>
+							</div>
+							<a target="_blank" class="t_credit clearfix" href="http://pcredit.kz/">Получить кредит</a>
+						</div>
+						<nav class="middle_nav">
+							<ul class="middle_ul">
+								<li>
+									<a href="catalog.html">Швейцарские часы</a>
+								</li>
+								<li>
+									<a href="catalog.html">Аксессуары</a>
+								</li>
+								<li>
+									<a href="catalog.html">Ювелирные украшения</a>
+								</li>
+								<li class="mid_mob">
+									<a href="catalog.html">Продать</a>
+								</li>
+								<li class="mid_mob">
+									<a href="catalog.html">Заложить</a>
+								</li>
+								<li class="mid_mob">
+									<a href="catalog.html">Купить</a>
+								</li>
+
+							</ul>
+						</nav>
 					</div>
 				</div>
-				<div class="logo">
-					<a href="#"><img src="/img/logo.svg"/></a>
-				</div>
-				<a target="_blank" class="t_credit clearfix" href="http://pcredit.kz/">Получить кредит</a>
-			</div>
-			<nav class="middle_nav">
-				<ul class="middle_ul">
-					<li>
-						<a href="/clocks">Швейцарские часы</a>
-					</li>
-					<li>
-						<a href="catalog.html">Аксессуары</a>
-					</li>
-					<li>
-						<a href="catalog.html">Ювелирные украшения</a>
-					</li>						
-				</ul>
-			</nav>
-		</div>
-	</div>
 </header>
