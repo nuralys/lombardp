@@ -5,7 +5,7 @@
 			</div>
 			<nav class="up_nav">
 				<ul>
-					<li><a href="about.html">О часовом ломбарде</a></li>
+					<li><a href="/page/about">О часовом ломбарде</a></li>
 					<li><a href="zalog.html">Залог часов</a></li>
 					<li><a href="sale.html">Продать часы</a></li>
 					<li><a href="ocenka.html">Экспертиза и оценка</a></li>
@@ -30,10 +30,10 @@
 			<a href="tel:+7 (495) 215-21-15 " class="m_number">+7 (495) 215-21-15 </a>
 			<div class="mob_part">
 				<ul class="mob_ul">
-					<li class="active"><a href="/">Швейцарские часы</a></li>
-					<li><a href="news.html">Аксессуары</a></li>
+					<li class="active"><a href="/clocks">Швейцарские часы</a></li>
+					<li><a href="/accessories">Аксессуары</a></li>
 					<li><a href="#">Ювелирные украшения</a></li>
-					<li><a href="#">О часовом ломбарде</a></li>
+					<li><a href="/page/about">О часовом ломбарде</a></li>
 					<li><a href="#">Залог часов</a></li>
 					<li><a href="#">Продать часы</a></li>
 					<li><a href="#">Экспертиза и оценка</a></li>
@@ -57,17 +57,17 @@
 								</div>
 							</div>
 							<div class="logo">
-								<a href="#"><img src="img/logo.svg"/></a>
+								<a href="/"><img src="/img/logo.svg"/></a>
 							</div>
 							<a target="_blank" class="t_credit clearfix" href="http://pcredit.kz/">Получить кредит</a>
 						</div>
 						<nav class="middle_nav">
 							<ul class="middle_ul">
 								<li>
-									<a href="catalog.html">Швейцарские часы</a>
+									<a href="/clocks">Швейцарские часы</a>
 								</li>
 								<li>
-									<a href="catalog.html">Аксессуары</a>
+									<a href="/accessories">Аксессуары</a>
 								</li>
 								<li>
 									<a href="catalog.html">Ювелирные украшения</a>

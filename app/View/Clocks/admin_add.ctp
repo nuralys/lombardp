@@ -84,8 +84,8 @@ echo $this->Form->input('band_material', array('label' => 'Материал ре
 	<label for="ClockCondition_clock">Состояние:</label>
 	<select name="data[Clock][condition_clock]" id="Clockcondition_clock" required="required">
 			<option value="">Выберите состояние</option>
-			<option value="0">Часы «с пробегом»</option>
 			<option value="1">Абсолютно новые</option>
+			<option value="2">Часы «с пробегом»</option>
 	</select>
 </div>
 <?php

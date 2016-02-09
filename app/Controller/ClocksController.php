@@ -2,7 +2,7 @@
 
 class ClocksController extends AppController{
 
-	public $uses = array('Clock', 'Brand', 'Housing');
+	public $uses = array('Clock', 'Brand', 'Housing', 'Type');
 
 	public function index(){
 		$brands = $this->Brand->find('list');
@@ -33,8 +33,14 @@ class ClocksController extends AppController{
 			throw new NotFoundException('Такой страницы нет...');
 		}
 		$data = $this->Clock->findById($id);
+		$brand_id = $data['Clock']['brand_id'];
+		$brand = $this->Brand->findById($brand_id);
+		$housing_id = $data['Clock']['housing_id'];
+		$housing = $this->Housing->findById($housing_id);
+		$type_id = $data['Clock']['type_id'];
+		$type = $this->Type->findById($type_id);
 		// $filters = $this->Filter->find('all');
-		$this->set(compact('data'));
+		$this->set(compact('data', 'brand', 'housing', 'type'));
 	}
 
 	public function admin_index(){
@@ -67,5 +73,37 @@ class ClocksController extends AppController{
 		$housings = $this->Housing->find('list');
 		$title_for_layout = 'Добавление нового материала';
 		$this->set(compact('title_for_layout', 'brands', 'housings'));
+	}
+
+	public function admin_edit($id){
+		if(is_null($id) || !(int)$id || !$this->Clock->exists($id)){
+			throw new NotFoundException('Такой страницы нет...');
+		}
+		$data = $this->Clock->findById($id);
+		if(!$id){
+			throw new NotFoundException('Такой страницы нет...');
+		}
+		if($this->request->is(array('post', 'put'))){
+			$this->Clock->id = $id;
+			$data1 = $this->request->data['Clock'];
+			if(!$data1['img']['name']){
+				unset($data1['img']);
+			}
+			if($this->Clock->save($data1)){
+				$this->Session->setFlash('Сохранено', 'default', array(), 'good');
+				return $this->redirect($this->referer());
+			}else{
+				$this->Session->setFlash('Ошибка', 'default', array(), 'bad');
+			}
+		}
+		//Заполняем данные в форме
+		if(!$this->request->data){
+			$this->request->data = $data;
+			$brands = $this->Brand->find('list', array(
+			'conditions' => array('type' => 'clocks')
+			));
+			$types = $this->Type->find('list');
+			$this->set(compact('id', 'data', 'brands', 'types'));
+		}
 	}
 }
