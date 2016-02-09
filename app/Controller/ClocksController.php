@@ -6,6 +6,8 @@ class ClocksController extends AppController{
 
 	public function index(){
 		$brands = $this->Brand->find('list');
+		$types = $this->Type->find('list');
+		$housings = $this->Housing->find('list');
 
 		if(!empty($_GET['reference'])) $where['reference'] = 'reference='. '"' .$_GET['reference']. '"';
 		if(!empty($_GET['grand'])) $where['grand'] = 'equipment='.$_GET['grand'];
@@ -14,7 +16,12 @@ class ClocksController extends AppController{
 		if(!empty($_GET['receipts'])) $where['receipts'] = 'receipts='.$_GET['receipts'];
 		if(!empty($_GET['sale'])) $where['sale'] = 'sale!=0';
 		if(!empty($_GET['brand_id'])) $where['brand_id'] = 'brand_id='.$_GET['brand_id'];
-		if(!empty($_GET['price'])) $where['prce'] = 'price<'.$_GET['price'];
+		if(!empty($_GET['price'])) $where['price'] = 'price<'.$_GET['price'];
+		if(!empty($_GET['promo'])) $where['promo'] = 'promo='.$_GET['promo'];
+		if(!empty($_GET['equipment'])) $where['equipment'] = 'equipment='.$_GET['equipment'];
+		if(!empty($_GET['type_id'])) $where['type_id'] = 'type_id='.$_GET['type_id'];
+		if(!empty($_GET['hullshape'])) $where['hullshape'] = 'hullshape='.$_GET['hullshape'];
+		if(!empty($_GET['housing_id'])) $where['housing_id'] = 'housing_id='.$_GET['housing_id'];
 		if(!empty($where)){
 				$where = implode($where, " AND ");
 			}
@@ -25,7 +32,7 @@ class ClocksController extends AppController{
 			// debug($where);
 		$data = $this->Clock->query($sql);
 		$title_for_layout = 'Купить дорогие швейцарские часы бу Астана';
-		$this->set(compact('data', 'title_for_layout', 'brands'));
+		$this->set(compact('data', 'title_for_layout', 'brands', 'types', 'housings'));
 	}
 
 	public function view($id){
