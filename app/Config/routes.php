@@ -26,17 +26,15 @@
  */
 	Router::connect('/admin/users/:action', array('controller' => 'users','admin' => true));
 	Router::connect('/admin', array('controller' => 'pages', 'action' => 'index', 'admin' => true));
-	Router::connect('/admin/models/add', array('controller' => 'childmodels', 'action' => 'add', 'admin' => true));
-	Router::connect('/admin/models/edit/*', array('controller' => 'childmodels', 'action' => 'edit', 'admin' => true));
 	
 	Router::connect('/category/*', array('controller' => 'products', 'action' => 'index'));
 	Router::connect('/product/*', array('controller' => 'products', 'action' => 'view'));
 	Router::connect('/search', array('controller' => 'products', 'action' => 'search'));
 	Router::connect('/clocks', array('controller' => 'clocks', 'action' => 'index'));
 	Router::connect('/clocks/*', array('controller' => 'clocks', 'action' => 'view'));
-	Router::connect('/models', array('controller' => 'childmodels', 'action' => 'index'));
-	Router::connect('/albums', array('controller' => 'albums', 'action' => 'index'));
-	Router::connect('/albums/*', array('controller' => 'albums', 'action' => 'view'));
+	Router::connect('/accessories', array('controller' => 'accessories', 'action' => 'index'));
+	Router::connect('/accessories/*', array('controller' => 'accessories', 'action' => 'view'));
+	
 	Router::connect('/news', array('controller' => 'news', 'action' => 'index'));
 	Router::connect('/news/*', array('controller' => 'news', 'action' => 'view'));
 	Router::connect('/', array('controller' => 'pages', 'action' => 'home'));
