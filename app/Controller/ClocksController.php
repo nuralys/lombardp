@@ -18,7 +18,7 @@ class ClocksController extends AppController{
 		if(!empty($where)){
 				$where = implode($where, " AND ");
 			}
-		$sql = "SELECT `Clock`.`id`, `Clock`.`brand_id`, `Clock`.`name`, `Clock`.`price`, `Clock`.`img`, `Clock`.`collection`, `Clock`.`sex`, `Clock`.`reference`, `Clock`.`type`, `Clock`.`housing_id`, `Clock`.`watertightness`, `Clock`.`housing_diameter`, `Clock`.`glass`, `Clock`.`dial_color`, `Clock`.`type_mechanism`, `Clock`.`options`, `Clock`.`power_reserve`, `Clock`.`caliber`, `Clock`.`band_material`, `Clock`.`equipment`, `Clock`.`condition_clock`, `Brand`.`id`, `Brand`.`title`, `Housing`.`id`, `Housing`.`title` FROM `lombardp_ac`.`clocks` AS `Clock` LEFT JOIN `lombardp_ac`.`brands` AS `Brand` ON (`Clock`.`brand_id` = `Brand`.`id`) LEFT JOIN `lombardp_ac`.`housings` AS `Housing` ON (`Clock`.`housing_id` = `Housing`.`id`)";
+		$sql = "SELECT `Clock`.`id`, `Clock`.`brand_id`, `Clock`.`name`, `Clock`.`price`, `Clock`.`img`, `Clock`.`collection`, `Clock`.`sex`, `Clock`.`reference`, `Clock`.`type_id`, `Clock`.`housing_id`, `Clock`.`watertightness`, `Clock`.`housing_diameter`, `Clock`.`glass`, `Clock`.`dial_color`, `Clock`.`type_mechanism`, `Clock`.`options`, `Clock`.`power_reserve`, `Clock`.`caliber`, `Clock`.`band_material`, `Clock`.`equipment`, `Clock`.`condition_clock`, `Brand`.`id`, `Brand`.`title`, `Housing`.`id`, `Housing`.`title` FROM `lombardp_ac`.`clocks` AS `Clock` LEFT JOIN `lombardp_ac`.`brands` AS `Brand` ON (`Clock`.`brand_id` = `Brand`.`id`) LEFT JOIN `lombardp_ac`.`housings` AS `Housing` ON (`Clock`.`housing_id` = `Housing`.`id`)";
 		if(isset($where) && $where!=''){
 				$sql .= " WHERE ".$where;
 			}
