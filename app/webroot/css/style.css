@@ -2283,3 +2283,65 @@ footer .social{
 @media screen and (max-width: 340px){
 
 */
+/* admin*/
+.input.select select {
+    /* float: right; */
+    width: 404px;
+    float: right;
+}
+.input {
+    overflow: hidden;
+    margin-bottom: 10px;
+    width: 583px;
+}
+.input input {
+    float: right;
+    width: 400px;
+}
+.submit input {
+    display: block;
+    width: 192px;
+    height: 50px;
+    margin: 24px 0;
+    border: 1px solid #9d705b;
+    font-size: 15px;
+    font-weight: bold;
+    /* float: right; */
+    line-height: 50px;
+    text-transform: uppercase;
+    background-color: #fff;
+}
+.input textarea {
+    float: right;
+    width: 400px;
+}
+.submit input:hover {
+    background-color: #9d705b;
+    color: #fff;
+}
+.top_menu {
+    overflow: hidden;
+}
+.top_menu_item {
+    float: left;
+    margin: 5px;
+}
+.admin_list {
+    list-style: none;
+    padding: 0px;
+    overflow: hidden;
+    margin:0;
+}
+.admin_list li {
+    float: left;
+    width: 200px;
+    border: 1px solid #cecece;
+    text-align: center;
+    padding: 10px;
+    margin-right: 30px;
+}
+.admin_add {
+    margin: 10px 0;
+    display: block;
+}
+/*admin end*/
