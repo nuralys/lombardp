@@ -1,8 +1,8 @@
 <?php
 
-class AccessoriesController extends AppController{
+class JewelriesController extends AppController{
 
-	public $uses = array('Accessory', 'Brand');
+	public $uses = array('Jewelry', 'Brand');
 
 	public function index(){
 		$brands = $this->Brand->find('list', array(
@@ -15,44 +15,44 @@ class AccessoriesController extends AppController{
 		if(!empty($where)){
 				$where = implode($where, " AND ");
 			}
-		$sql = "SELECT `Accessory`.`id`, `Accessory`.`brand_id`, `Accessory`.`name`, `Accessory`.`price`, `Accessory`.`img`, `Accessory`.`reference`, `Accessory`.`equipment`,  `Brand`.`id`, `Brand`.`title` FROM `lombardp_ac`.`accessories` AS `Accessory` LEFT JOIN `lombardp_ac`.`brands` AS `Brand` ON (`Accessory`.`brand_id` = `Brand`.`id`)";
+		$sql = "SELECT `Jewelry`.`id`, `Jewelry`.`brand_id`, `Jewelry`.`name`, `Jewelry`.`price`, `Jewelry`.`img`, `Jewelry`.`reference`, `Jewelry`.`equipment`,  `Brand`.`id`, `Brand`.`title` FROM `lombardp_ac`.`accessories` AS `Jewelry` LEFT JOIN `lombardp_ac`.`brands` AS `Brand` ON (`Jewelry`.`brand_id` = `Brand`.`id`)";
 		if(isset($where) && $where!=''){
 				$sql .= " WHERE ".$where;
 			}
 			// debug($where);
-		$data = $this->Accessory->query($sql);
-		$title_for_layout = 'Купить дорогие швейцарские часы бу Астана';
+		$data = $this->Jewelry->query($sql);
+		$title_for_layout = 'Купить ювелирные украшения Астана';
 		$this->set(compact('data', 'title_for_layout', 'brands'));
 	}
 
 	public function view($id){
-		if(is_null($id) || !(int)$id || !$this->Accessory->exists($id)){
+		if(is_null($id) || !(int)$id || !$this->Jewelry->exists($id)){
 			throw new NotFoundException('Такой страницы нет...');
 		}
-		$data = $this->Accessory->findById($id);
-		$brand_id = $data['Accessory']['brand_id'];
+		$data = $this->Jewelry->findById($id);
+		$brand_id = $data['Jewelry']['brand_id'];
 		$brand = $this->Brand->findById($brand_id);
 		$title_for_layout = 'Аксессуары';
 		$this->set(compact('data', 'title_for_layout', 'brand'));
 	}
 
 	public function admin_index(){
-		$data = $this->Accessory->find('all');
+		$data = $this->Jewelry->find('all');
 		$title_for_layout = 'Аксессуары';
 		$this->set(compact('data', 'title_for_layout'));
 	}
 
 	public function admin_add(){
 		if($this->request->is('post')){
-			$this->Accessory->create();
-			$data = $this->request->data['Accessory'];
+			$this->Jewelry->create();
+			$data = $this->request->data['Jewelry'];
 			// debug($this->request->data);
 			// debug($data);
 			 if(!$data['img']['name']){
 			 	unset($data['img']);
 			}
 
-			if($this->Accessory->save($data)){
+			if($this->Jewelry->save($data)){
 				$this->Session->setFlash('Сохранено', 'default', array(), 'good');
 				// debug($data);
 				return $this->redirect($this->referer());
@@ -68,20 +68,20 @@ class AccessoriesController extends AppController{
 	}
 
 	public function admin_edit($id){
-		if(is_null($id) || !(int)$id || !$this->Accessory->exists($id)){
+		if(is_null($id) || !(int)$id || !$this->Jewelry->exists($id)){
 			throw new NotFoundException('Такой страницы нет...');
 		}
-		$data = $this->Accessory->findById($id);
+		$data = $this->Jewelry->findById($id);
 		if(!$id){
 			throw new NotFoundException('Такой страницы нет...');
 		}
 		if($this->request->is(array('post', 'put'))){
-			$this->Accessory->id = $id;
-			$data1 = $this->request->data['Accessory'];
+			$this->Jewelry->id = $id;
+			$data1 = $this->request->data['Jewelry'];
 			if(!isset($data1['img']['name']) || !$data1['img']['name']){
 				unset($data1['img']);
 			}
-			if($this->Accessory->save($data1)){
+			if($this->Jewelry->save($data1)){
 				$this->Session->setFlash('Сохранено', 'default', array(), 'good');
 				return $this->redirect($this->referer());
 			}else{
@@ -92,7 +92,7 @@ class AccessoriesController extends AppController{
 		if(!$this->request->data){
 			$this->request->data = $data;
 			$brands = $this->Brand->find('list', array(
-			'conditions' => array('type' => 'accessories')
+			'conditions' => array('type' => 'jewelries')
 			));
 			$title_for_layout = 'Редактирование материала';
 			$this->set(compact('id', 'data', 'brands', 'title_for_layout'));
@@ -100,10 +100,10 @@ class AccessoriesController extends AppController{
 	}
 
 	public function admin_delete($id){
-		if (!$this->Accessory->exists($id)) {
+		if (!$this->Jewelry->exists($id)) {
 			throw new NotFounddException('Такого материала нет');
 		}
-		if($this->Accessory->delete($id)){
+		if($this->Jewelry->delete($id)){
 			$this->Session->setFlash('Удалено', 'default', array(), 'good');
 		}else{
 			$this->Session->setFlash('Ошибка', 'default', array(), 'bad');
