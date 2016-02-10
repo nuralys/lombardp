@@ -2344,4 +2344,11 @@ footer .social{
     margin: 10px 0;
     display: block;
 }
+div#goodMessage { 
+background: #46CE24; 
+color: #fff; 
+padding: 10px; 
+text-align: center; 
+font-size: 18px; 
+}
 /*admin end*/
