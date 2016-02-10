@@ -1,6 +1,6 @@
 <aside class="filtr">
 	<div class="wr">
-		<form action="/clocks" method="get">
+		<form action="/clocks" method="get" id="filtr_clock">
 			<div class="filt_title">
 				Фильтр
 				<div class="decor-title_wings"></div>
@@ -306,8 +306,8 @@
 				</div>
 			</div>
 			<div class="submit_part">
-				<button type="submit" class="btn">Применить</button>
-				<a href="catalog.html">Сбросить все</a>
+				<button type="submit" id="btn" class="btn">Применить</button>
+				<a  href="/clocks" id="destroy" >Сбросить все</a>
 			</div>	
 		</form>
 	</div>
