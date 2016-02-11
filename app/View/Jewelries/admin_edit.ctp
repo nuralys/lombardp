@@ -49,6 +49,7 @@ echo $this->Form->input('img', array('label' => '', 'type' => 'file'))
 echo $this->Form->input('price', array('label' => 'Цена:'));
 echo $this->Form->input('reference', array('label' => 'Референс:'));
 echo $this->Form->input('equipments', array('label' => 'Комплектация:'));
+echo $this->Form->input('condition', array('label' => 'Состояние:'));
 echo $this->Form->input('other', array('label' => 'Описание:'));
 echo $this->Form->end('Редактировать');
 ?>

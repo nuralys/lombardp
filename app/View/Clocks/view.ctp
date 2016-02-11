@@ -1,5 +1,5 @@
 <?php 
-//debug($data);
+// debug($data);
 //debug($brand);
  ?>
 <div class="order_part">
@@ -53,10 +53,18 @@
 		<div class="or_row">
 			<div class="wr">
 			<ul class="ol_char">
-				<li><span>Бренд:</span><?=$brand['Brand']['title']?></li>
-				<li><span>Кому:</span> <?=$data['Clock']['sex']?></li>
-				<li><span>Коллекция:</span><?=$data['Clock']['collection']?></li>
-				<li><span>Референс:</span><?=$data['Clock']['reference']?></li>
+				<?php if(!empty($brand['Brand']['title'])): ?>
+					<li><span>Бренд:</span><?=$brand['Brand']['title']?></li>
+				<?php endif ?>
+				<?php if(!empty($data['Clock']['sex'])): ?>
+					<li><span>Кому:</span> <?=$data['Clock']['sex']?></li>
+				<?php endif ?>
+				<?php if(!empty($data['Clock']['collection'])): ?>
+					<li><span>Коллекция:</span><?=$data['Clock']['collection']?></li>
+				<?php endif ?>
+				<?php if(!empty($data['Clock']['reference'])): ?>
+					<li><span>Референс:</span><?=$data['Clock']['reference']?></li>
+				<?php endif ?>
 			</ul>
 			</div>
 		</div>
@@ -89,79 +97,101 @@
 				<div class="spec spec1">
 					<div class="wr">
 						<ul class="spec_ul">
+						<?php if(!empty($type['Type']['title'])): ?>
 							<li>
 								<div class="spec_name">Тип:</div>
 								<div class="spec_value">
 									<span><?=$type['Type']['title']?></span>
 								</div>
 							</li>
+						<?php endif ?>
+						<?php if(!empty($housing['Housing']['title'])): ?>
 							<li>
 								<div class="spec_name">Материал корпуса:</div>
 								<div class="spec_value">
 									<span><?=$housing['Housing']['title']?></span>
 								</div>
 							</li>
+						<?php endif ?>
+						<?php if(!empty($data['Clock']['watertightness'])): ?>
 							<li>
 								<div class="spec_name">Водонепроницаемость:</div>
 								<div class="spec_value">
 									<span><?=$data['Clock']['watertightness']?> м</span>
 								</div>
 							</li>
+						<?php endif ?>
+						<?php if(!empty($data['Clock']['housing_diameter'])): ?>
 							<li>
 								<div class="spec_name">Диаметр корпуса:</div>
 								<div class="spec_value">
 									<span><?=$data['Clock']['housing_diameter']?> мм</span>
 								</div>
 							</li>
+						<?php endif ?>
+						<?php if(!empty($data['Clock']['glass'])): ?>
 							<li>
 								<div class="spec_name">Стекло:</div>
 								<div class="spec_value">
 									<span><?=$data['Clock']['glass']?></span>
 								</div>
 							</li>
+						<?php endif ?>
+						<?php if(!empty($data['Clock']['dial_color'])): ?>
 							<li>
 								<div class="spec_name">Цвет циферблата:</div>
 								<div class="spec_value">
 									<span><?=$data['Clock']['dial_color']?></span>
 								</div>
 							</li>
+						<?php endif ?>
+						<?php if(!empty($data['Clock']['type_mechanism'])): ?>
 							<li>
 								<div class="spec_name">Тип механизма</div>
 								<div class="spec_value">
 									<span><?=$data['Clock']['type_mechanism']?></span>
 								</div>
 							</li>
+						<?php endif ?>
 						</ul>
 					</div>
 				</div>
 				<div class="spec">
 					<div class="wr">
 						<ul class="spec_ul">
+						<?php if(!empty($data['Clock']['options'])): ?>
 							<li>
 								<div class="spec_name">Функции:</div>
 								<div class="spec_value">
 									<span><?=$data['Clock']['options']?></span>
 								</div>
 							</li>
+						<?php endif ?>
+						<?php if(!empty($data['Clock']['power_reserve'])): ?>
 							<li>
 								<div class="spec_name">Запас хода:</div>
 								<div class="spec_value">
 									<span><?=$data['Clock']['power_reserve']?></span>
 								</div>
 							</li>
+						<?php endif ?>
+						<?php if(!empty($data['Clock']['caliber'])): ?>
 							<li>
 								<div class="spec_name">Калибр:</div>
 								<div class="spec_value">
 									<span><?=$data['Clock']['caliber']?></span>
 								</div>
 							</li>
+						<?php endif ?>
+						<?php if(!empty($data['Clock']['band_material'])): ?>
 							<li>
 								<div class="spec_name">Материал ремешка:</div>
 								<div class="spec_value">
 									<span><?=$data['Clock']['band_material']?></span>
 								</div>
 							</li>
-							<?php if($data['Clock']['equipment'] != 1): ?>
+						<?php endif ?>
+						<?php if($data['Clock']['equipment'] != 1): ?>
 							<li>
 								<div class="spec_name">Комплектация:</div>
 								<div class="spec_value">
@@ -185,7 +215,8 @@
 									</span>
 								</div>
 							</li>
-							<?php endif ?>
+						<?php endif ?>
+						<?php if(!empty($data['Clock']['condition_clock'])): ?>
 							<li>
 								<div class="spec_name">Состояние</div>
 								<div class="spec_value">
@@ -209,6 +240,7 @@
 									</span>
 								</div>
 							</li>
+						<?php endif ?>
 						</ul>
 					</div>
 				</div>

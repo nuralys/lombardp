@@ -75,9 +75,6 @@ echo $this->Form->input('housing_diameter', array('label' => 'Диаметр к�
 echo $this->Form->input('glass', array('label' => 'Стекло:'));
 echo $this->Form->input('dial_color', array('label' => 'Цвет циферблата:'));
 echo $this->Form->input('type_mechanism', array('label' => 'Тип механизма:'));
-?>
-
-<?php
 echo $this->Form->input('options', array('label' => 'Функции:'));
 echo $this->Form->input('power_reserve', array('label' => 'Запас хода:'));
 echo $this->Form->input('caliber', array('label' => 'Калибр:'));

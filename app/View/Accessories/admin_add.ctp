@@ -17,7 +17,6 @@ echo $this->Form->create('Accessory', array('type' => 'file'));?>
 echo $this->Form->input('name', array('label' => 'Название:'));
 echo $this->Form->input('price', array('label' => 'Цена:'));
 echo $this->Form->input('img', array('label' => 'Изображение:', 'type' => 'file'));
-echo $this->Form->input('sale', array('label' => 'Скидка %:'));
 echo $this->Form->input('reference', array('label' => 'Референс:'));
 echo $this->Form->input('equipment', array('label' => 'Комплектация:'));
 echo $this->Form->input('condition', array('label' => 'Состояние:'));

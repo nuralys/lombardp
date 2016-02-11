@@ -53,8 +53,12 @@
 		<div class="or_row">
 			<div class="wr">
 			<ul class="ol_char">
+			<?php if(!empty($brand['Brand']['title'])): ?>
 				<li><span>Бренд:</span><?=$brand['Brand']['title']?></li>
+			<?php endif ?>
+			<?php if(!empty($data['Accessory']['reference'])): ?>
 				<li><span>Референс:</span><?=$data['Accessory']['reference']?></li>
+			<?php endif ?>
 			</ul>
 			</div>
 		</div>

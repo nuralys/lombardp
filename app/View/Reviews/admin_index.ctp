@@ -2,7 +2,7 @@
 <ul class="admin_list">
 <?php foreach($data as $item): ?>
 	<li><img src="/img/review/thumbs/<?=$item['Review']['img']?>"><p><?=$item['Review']['title']?></p>
-<a href="/admin/pages/edit/<?=$item['Review']['id']?>">Редактировать</a>
+<a href="/admin/reviews/edit/<?=$item['Review']['id']?>">Редактировать</a>
 	</li>
 <?php endforeach ?>
 </ul>
