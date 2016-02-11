@@ -34,7 +34,11 @@
 	Router::connect('/clocks/*', array('controller' => 'clocks', 'action' => 'view'));
 	Router::connect('/accessories', array('controller' => 'accessories', 'action' => 'index'));
 	Router::connect('/accessories/*', array('controller' => 'accessories', 'action' => 'view'));
+	Router::connect('/jewelries', array('controller' => 'jewelries', 'action' => 'index'));
+	Router::connect('/jewelries/*', array('controller' => 'jewelries', 'action' => 'view'));
 	
+	Router::connect('/article/*', array('controller' => 'articles', 'action' => 'view'));
+
 	Router::connect('/news', array('controller' => 'news', 'action' => 'index'));
 	Router::connect('/news/*', array('controller' => 'news', 'action' => 'view'));
 	Router::connect('/', array('controller' => 'pages', 'action' => 'home'));

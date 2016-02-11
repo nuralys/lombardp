@@ -7,17 +7,20 @@
 					<div class="catalog">
 						<div class="wr">
 							<ol class="breadcrumbs">
-								<li><a href="index.html">Главная</a></li>
+								<li><a href="/">Главная</a></li>
 								<li><span>Каталог часов</span></li>
-								<li><span>Купить сегодня:Москва</span></li>
+								<!-- <li><span>Купить сегодня:Москва</span></li> -->
 							</ol>
 							<div class="sec_cat">
 								<h1>Каталог</h1>
-								<select class="btn">
+								<!-- <select class="btn">
 									<option>Астана</option>
 									<option>Алматы</option>
-								</select>
-							</div>	
+								</select> -->
+							</div>
+							<?php if(empty($data)): ?>
+								<div class="not_found">Ничего не найдено</div>
+							<?php else: ?>
 							<ul class="rows cat_rows">
 								<?php foreach($data as $item): ?>
 								<li>
@@ -37,6 +40,7 @@
 								</li>
 								<?php endforeach; ?>					
 							</ul>
+						<?php endif ?>
 						</div>
 					</div>
 				</div>

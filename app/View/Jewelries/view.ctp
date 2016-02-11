@@ -5,17 +5,17 @@
 <div class="order_part">
 	<div class="cr">
 		<div class="left_order">
-			<a class="back" href="/accessories">Назад</a>
+			<a class="back" href="/jewelries">Назад</a>
 			<div class="order">
 				<div class="wr">
 					<div class="like"></div>
 					<h2 class="order_title">
                         <span class="c_heading"><?=$brand['Brand']['title']?></span>
-                        <small><?=$data['Accessory']['name']?></small>
+                        <small><?=$data['Jewelry']['name']?></small>
                     </h2>
                     <div class="for_line">
                     	<div class="price_line">Цена у нас</div>
-						<div class="c_price"><?=$data['Accessory']['price']?>$</div>	
+						<div class="c_price"><?=$data['Jewelry']['price']?>$</div>	
                     </div>
                     <button type="submit">Купить</button>
                     <span class="delivery">Товар будет доставлен вам за  24 часа</span>
@@ -44,7 +44,7 @@
 			</div>
 		</div>
 		<figure class="product_img">
-			<img src="/img/accessory/<?=$data['Accessory']['img']?>"/>
+			<img src="/img/jewelry/<?=$data['Jewelry']['img']?>"/>
 		</figure>					
 	</div>	
 </div>
@@ -54,7 +54,7 @@
 			<div class="wr">
 			<ul class="ol_char">
 				<li><span>Бренд:</span><?=$brand['Brand']['title']?></li>
-				<li><span>Референс:</span><?=$data['Accessory']['reference']?></li>
+				<li><span>Референс:</span><?=$data['Jewelry']['reference']?></li>
 			</ul>
 			</div>
 		</div>
@@ -87,22 +87,22 @@
 				<div class="spec spec1">
 					<div class="wr">
 						<ul class="spec_ul">
-							<?php if(!empty($data['Accessory']['equipment'])): ?>
+							<?php if(!empty($data['Jewelry']['equipment'])): ?>
 							<li>
 								<div class="spec_name">Комплектация:</div>
 								<div class="spec_value">
 									<span>
-									<?=$data['Accessory']['equipment'];?>
+									<?=$data['Jewelry']['equipment'];?>
 									</span>
 								</div>
 							</li>
 							<?php endif ?>
-							<?php if(!empty($data['Accessory']['condition'])): ?>
+							<?php if(!empty($data['Jewelry']['condition'])): ?>
 							<li>
 								<div class="spec_name">Состояние:</div>
 								<div class="spec_value">
 									<span>
-									<?=$data['Accessory']['condition'];?>
+									<?=$data['Jewelry']['condition'];?>
 									</span>
 								</div>
 							</li>
@@ -114,12 +114,12 @@
 				<div class="spec">
 					<div class="wr">
 						<ul class="spec_ul">
-							<?php if(!empty($data['Accessory']['other'])): ?>
+							<?php if(!empty($data['Jewelry']['other'])): ?>
 							<li>
 								<!-- <div class="spec_name">Комплектация:</div> -->
 								<div class="spec_value">
 									<span>
-									<?=$data['Accessory']['other'];?>
+									<?=$data['Jewelry']['other'];?>
 									</span>
 								</div>
 							</li>

@@ -3,7 +3,7 @@
 
 <div class="grey">
 				<div class="cr">
-					<?php echo $this->element('filter_accessory') ?>
+					<?php echo $this->element('filter_jewelry') ?>
 					<div class="catalog">
 						<div class="wr">
 							<ol class="breadcrumbs">
@@ -12,7 +12,7 @@
 								<!-- <li><span>Купить сегодня:Казахстан</span></li> -->
 							</ol>
 							<div class="sec_cat">
-								<h1>Каталог аксессуаров</h1>
+								<h1>Каталог</h1>
 								<!-- <select class="btn">
 									<option>Астана</option>
 									<option>Алматы</option>
@@ -26,14 +26,14 @@
 								<li>
 									<figure class="card">
 										<div class="card_img">
-											<a href="/accessories/<?=$item['Accessory']['id']?>">
-											<img src="/img/accessory/thumbs/<?=$item['Accessory']['img']?>" alt="<?=$item['Brand']['title'] ?>" />
+											<a href="/jewelries/<?=$item['Jewelry']['id']?>">
+											<img src="/img/jewelry/thumbs/<?=$item['Jewelry']['img']?>" alt="<?=$item['Brand']['title'] ?>" />
 											</a>
 										</div>
 										<figcaption>
-											<a class="c_heading" href="/accessories/<?=$item['Accessory']['id']?>"><?=$item['Brand']['title'] ?></a>
-											<p class="c_des"><?=$item['Accessory']['name'] ?></p>
-											<div class="c_price"><?=$item['Accessory']['price'] ?>$</div>
+											<a class="c_heading" href="/jewelries/<?=$item['Jewelry']['id']?>"><?=$item['Brand']['title'] ?></a>
+											<p class="c_des"><?=$item['Jewelry']['name'] ?></p>
+											<div class="c_price"><?=$item['Jewelry']['price'] ?>$</div>
 										</figcaption>
 									</figure>
 								</li>

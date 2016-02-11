@@ -2,22 +2,22 @@
 	<div class="bor">
 		<ul class="usl_right">
 			<li class="usl_i">
-				<a href="services.html">
+				<a href="/services">
 					Услуги
 				</a>
 			</li>
 			<li class="feed_i">
-				<a href="#">
+				<a href="/reviews">
 					Отзывы
 				</a>
 			</li>
 			<li class="news_i">
-				<a href="news.html">
+				<a href="/news">
 					Новости
 				</a>
 			</li>
 			<li class="garant_i">
-				<a href="#">
+				<a href="/article/guarantees">
 					Гарантии
 				</a>
 			</li>

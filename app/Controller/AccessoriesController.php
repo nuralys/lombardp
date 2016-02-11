@@ -9,7 +9,7 @@ class AccessoriesController extends AppController{
 			'conditions' => array('type' => 'accessories')
 		));
 
-		if(!empty($_GET['reference'])) $where['reference'] = 'reference='.$_GET['reference'];
+		if(!empty($_GET['reference'])) $where['reference'] = 'reference='. "'". $_GET['reference'] ."'";
 		if(!empty($_GET['brand_id'])) $where['brand_id'] = 'brand_id='.$_GET['brand_id'];
 		if(!empty($_GET['price'])) $where['prce'] = 'price<='.$_GET['price'];
 		if(!empty($where)){

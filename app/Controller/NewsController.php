@@ -27,6 +27,7 @@ class NewsController extends AppController{
 			}
 		}
 	}
+	
 	public function admin_edit($id){
 		if(is_null($id) || !(int)$id || !$this->News->exists($id)){
 			throw new NotFoundException('Такой страницы нет...');

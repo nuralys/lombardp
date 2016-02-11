@@ -20,14 +20,14 @@
 				</div>
 				<div class="coming">
 					<div class="small_i sm_new">
-					 	<a href="#">
+					 	<a href="/clocks?receipts=2">
 					 		<div class="supply_link">
 					 			Новые <br> поступления
 					 		</div>
 					 	</a>
 					</div>
 					<div class="small_i sm_wait">
-						<a href="#">
+						<a href="/clocks?receipts=3">
 							<div class="supply_link">
 								Ожидаемые <br> поступления
 							</div>
@@ -41,66 +41,23 @@
 						<span>Спецпредложения</span>
 					</h2>
 					<ul class="rows">
+					<?php foreach($deals as $item): ?>
 						<li>
 							<figure class="card">
 								<div class="card_img">
-									<a href="order.html">
-									<img src="/img/list_watch.jpg"/>
+									<a href="/clocks/<?=$item['Clock']['id']?>">
+									<img src="/img/clock/thumbs/<?=$item['Clock']['img']?>"/>
 									</a>
 								</div>
 								<figcaption>
-									<a class="c_heading" href="order.html">Hublot</a>
-									<p class="c_des">King Power Maradona 48 mm</p>
-									<i class="c_type">Розовое золото</i>
-									<div class="c_price">26,00$</div>
+									<a class="c_heading" href="/clocks/<?=$item['Clock']['id']?>"><?=$item['Brand']['title']?></a>
+									<p class="c_des"><?=$item['Clock']['name']?></p>
+									<i class="c_type"><?=$item['Housing']['title']?></i>
+									<div class="c_price"><?=$item['Clock']['price']?>$</div>
 								</figcaption>
 							</figure>
 						</li>
-						<li>
-							<figure class="card">
-								<div class="card_img">
-									<a href="#">
-									<img src="/img/list_watch.jpg"/>
-									</a>
-								</div>
-								<figcaption>
-									<a class="c_heading" href="#">Hublot</a>
-									<p class="c_des">King Power Maradona 48 mm</p>
-									<i class="c_type">Розовое золото</i>
-									<div class="c_price">26,00$</div>
-								</figcaption>
-							</figure>
-						</li>
-						<li>
-							<figure class="card">
-								<div class="card_img">
-									<a href="#">
-									<img src="/img/list_watch.jpg"/>
-									</a>
-								</div>
-								<figcaption>
-									<a class="c_heading" href="#">Hublot</a>
-									<p class="c_des">King Power Maradona 48 mm</p>
-									<i class="c_type">Розовое золото</i>
-									<div class="c_price">26,00$</div>
-								</figcaption>
-							</figure>
-						</li>
-						<li>
-							<figure class="card">
-								<div class="card_img">
-									<a href="#">
-									<img src="/img/list_watch.jpg"/>
-									</a>
-								</div>
-								<figcaption>
-									<a class="c_heading" href="#">Hublot</a>
-									<p class="c_des">King Power Maradona 48 mm</p>
-									<i class="c_type">Розовое золото</i>
-									<div class="c_price">26,00$</div>
-								</figcaption>
-							</figure>
-						</li>						
+						<?php endforeach ?>						
 					</ul>
 				</div>
 			</section>

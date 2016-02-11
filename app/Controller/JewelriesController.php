@@ -6,16 +6,18 @@ class JewelriesController extends AppController{
 
 	public function index(){
 		$brands = $this->Brand->find('list', array(
-			'conditions' => array('type' => 'accessories')
+			'conditions' => array('type' => 'jewelries')
 		));
 
-		if(!empty($_GET['reference'])) $where['reference'] = 'reference='.$_GET['reference'];
+		if(!empty($_GET['reference'])) $where['reference'] = 'reference='. "'". $_GET['reference'] ."'";
 		if(!empty($_GET['brand_id'])) $where['brand_id'] = 'brand_id='.$_GET['brand_id'];
-		if(!empty($_GET['price'])) $where['prce'] = 'price<='.$_GET['price'];
+		if(!empty($_GET['price'])) $where['price'] = 'price<='.$_GET['price'];
+		if(!empty($_GET['type'])) $where['type'] = '`Jewelry`.`type`='.$_GET['type'];
+		if(!empty($_GET['receipts'])) $where['receipts'] = 'receipts='.$_GET['receipts'];
 		if(!empty($where)){
 				$where = implode($where, " AND ");
 			}
-		$sql = "SELECT `Jewelry`.`id`, `Jewelry`.`brand_id`, `Jewelry`.`name`, `Jewelry`.`price`, `Jewelry`.`img`, `Jewelry`.`reference`, `Jewelry`.`equipment`,  `Brand`.`id`, `Brand`.`title` FROM `lombardp_ac`.`accessories` AS `Jewelry` LEFT JOIN `lombardp_ac`.`brands` AS `Brand` ON (`Jewelry`.`brand_id` = `Brand`.`id`)";
+		$sql = "SELECT `Jewelry`.`id`, `Jewelry`.`brand_id`, `Jewelry`.`name`, `Jewelry`.`price`, `Jewelry`.`img`, `Jewelry`.`reference`, `Jewelry`.`type`, `Jewelry`.`equipment`,  `Brand`.`id`, `Brand`.`title` FROM `lombardp_ac`.`jewelries` AS `Jewelry` LEFT JOIN `lombardp_ac`.`brands` AS `Brand` ON (`Jewelry`.`brand_id` = `Brand`.`id`)";
 		if(isset($where) && $where!=''){
 				$sql .= " WHERE ".$where;
 			}

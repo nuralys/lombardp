@@ -7,7 +7,41 @@
 			</div>
 
 			<input class="reference" name="reference" type="text" placeholder="Поиск по реферансу"/>
-			
+			<div class="filter_set">
+				<div class="filter_title">Тип</div>									
+				<input type="radio" value="1" name="type" id="type1" <?php echo (isset($_GET['type']) && $_GET['type']==1) ? "checked='checked'" : "" ?>>
+				<label for="type1">
+					<span>Браслет</span>
+				</label>
+				<input type="radio" value="2" name="type" id="type2" <?php echo (isset($_GET['type']) && $_GET['type']==2) ? "checked='checked'" : "" ?>>
+				<label for="type2">
+					<span>Запонки</span>
+				</label>
+				<input type="radio" value="3" name="type" id="type3" <?php echo (isset($_GET['type']) && $_GET['type']==3) ? "checked='checked'" : "" ?>>
+				<label for="type3">
+					<span>Колье</span>
+				</label>
+				<input type="radio" value="4" name="type" id="type4" <?php echo (isset($_GET['type']) && $_GET['type']==4) ? "checked='checked'" : "" ?>>
+				<label for="type4">
+					<span>Кольцо</span>
+				</label>
+				<input type="radio" value="5" name="type" id="type5" <?php echo (isset($_GET['type']) && $_GET['type']==5) ? "checked='checked'" : "" ?>>
+				<label for="type5">
+					<span>Комплект</span>
+				</label>
+				<input type="radio" value="6" name="type" id="type6" <?php echo (isset($_GET['type']) && $_GET['type']==6) ? "checked='checked'" : "" ?>>
+				<label for="type6">
+					<span>Крест</span>
+				</label>
+				<input type="radio" value="7" name="type" id="type7" <?php echo (isset($_GET['type']) && $_GET['type']==7) ? "checked='checked'" : "" ?>>
+				<label for="type7">
+					<span>Подвеска</span>
+				</label>
+				<input type="radio" value="8" name="type" id="type8" <?php echo (isset($_GET['type']) && $_GET['type']==8) ? "checked='checked'" : "" ?>>
+				<label for="type8">
+					<span>Серьги</span>
+				</label>
+			</div>
 			<div class="filter_set">
 				<div class="filter_title">Бренд</div>	
 				<?php foreach($brands as $key => $value): ?>
@@ -33,7 +67,21 @@
 					<span>до 50,000 $</span>
 				</label>
 			</div>
-			
+			<div class="filter_set">
+				<div class="filter_title">Поступления</div>									
+				<input type="radio" value="1" name="receipts" id="receipts1" <?php echo (isset($_GET['receipts']) && $_GET['receipts']==1) ? "checked='checked'" : "" ?>>
+				<label for="receipts1">
+					<span>На заказ</span>
+				</label>
+				<input type="radio" value="2" name="receipts" id="receipts2" <?php echo (isset($_GET['receipts']) && $_GET['receipts']==2) ? "checked='checked'" : "" ?>>
+				<label for="receipts2">
+					<span>Новые поступления</span>
+				</label>
+				<input type="radio" value="3" name="receipts" id="receipts3" <?php echo (isset($_GET['receipts']) && $_GET['receipts']==3) ? "checked='checked'" : "" ?>>
+				<label for="receipts3">
+					<span>Ожидаемые поступления</span>
+				</label>
+			</div>
 			<div class="submit_part">
 				<button type="submit" class="btn">Применить</button>
 				<a href="/jewelries">Сбросить все</a>

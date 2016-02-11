@@ -5,7 +5,7 @@
 <div class="order_part">
 	<div class="cr">
 		<div class="left_order">
-			<a class="back" href="#">Назад</a>
+			<a class="back" href="/clocks">Назад</a>
 			<div class="order">
 				<div class="wr">
 					<div class="like"></div>

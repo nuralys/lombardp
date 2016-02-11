@@ -4,10 +4,10 @@
 			<nav>
 				<ul class="foot_nav">
 					<li><a href="/page/about">О часовом ломбарде</a></li>
-					<li><a href="#">Залог часов</a></li>
-					<li><a href="#">Продать часы</a></li>
-					<li><a href="#">Экспертиза и оценка</a></li>
-					<li><a href="#">Контакты</a></li>
+					<li><a href="/article/zalog-chasov">Залог часов</a></li>
+					<li><a href="/article/vykup-chasov">Продать часы</a></li>
+					<li><a href="/article/expertise">Экспертиза и оценка</a></li>
+					<li><a href="/page/kontakty">Контакты</a></li>
 				</ul>
 			</nav>
 			<ul class="social">
