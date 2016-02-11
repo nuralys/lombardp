@@ -9,7 +9,7 @@
 		<?php foreach ($news as $item): ?>
 			<li>
 				<figure class="news_card">
-					<a href="#">
+					<a href="/news/<?=$item['News']['id']?>">
 						<div class="img"><img src="/img/news/<?=$item['News']['img']?>"/></div>
 					</a>							
 					<figcaption class="news_info">

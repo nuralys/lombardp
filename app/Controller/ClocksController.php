@@ -78,8 +78,9 @@ class ClocksController extends AppController{
 			'conditions' => array('type' => 'clocks')
 		));
 		$housings = $this->Housing->find('list');
+		$types = $this->Type->find('list');
 		$title_for_layout = 'Добавление нового материала';
-		$this->set(compact('title_for_layout', 'brands', 'housings'));
+		$this->set(compact('title_for_layout', 'brands', 'housings', 'types'));
 	}
 
 	public function admin_edit($id){
@@ -93,7 +94,7 @@ class ClocksController extends AppController{
 		if($this->request->is(array('post', 'put'))){
 			$this->Clock->id = $id;
 			$data1 = $this->request->data['Clock'];
-			if(!$data1['img']['name']){
+			if(!isset($data1['img']['name']) || !$data1['img']['name']){
 				unset($data1['img']);
 			}
 			if($this->Clock->save($data1)){
@@ -109,8 +110,21 @@ class ClocksController extends AppController{
 			$brands = $this->Brand->find('list', array(
 			'conditions' => array('type' => 'clocks')
 			));
+			$housings = $this->Housing->find('list');
 			$types = $this->Type->find('list');
-			$this->set(compact('id', 'data', 'brands', 'types'));
+			$this->set(compact('id', 'data', 'brands', 'housings', 'types'));
 		}
+	}
+
+	public function admin_delete($id){
+		if (!$this->Clock->exists($id)) {
+			throw new NotFounddException('Такого материала нет');
+		}
+		if($this->Clock->delete($id)){
+			$this->Session->setFlash('Удалено', 'default', array(), 'good');
+		}else{
+			$this->Session->setFlash('Ошибка', 'default', array(), 'bad');
+		}
+		return $this->redirect($this->referer());
 	}
 }

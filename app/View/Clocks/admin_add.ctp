@@ -40,8 +40,16 @@ echo $this->Form->input('collection', array('label' => 'Коллекция:'));
 <?php
 echo $this->Form->input('sale', array('label' => 'Скидка %:'));
 echo $this->Form->input('reference', array('label' => 'Референс:'));
-echo $this->Form->input('type', array('label' => 'Тип:'));
 ?>
+<div class="input select">
+	<label for="ClockTypeId">Тип:</label>
+	<select name="data[Clock][type_id]" id="ClockTypeId" required="required">
+	<option>Выберите тип</option>
+		<?php foreach($types as $key => $value): ?>
+			<option value="<?=$key?>"><?=$value?></option>
+		<?php endforeach; ?>
+	</select>
+</div>
 <div class="input select add_clock">
 	<label for="ClockHullshape">Форма корпуса:</label>
 	<select name="data[Clock][hullshape]" id="ClockSex">
@@ -67,6 +75,9 @@ echo $this->Form->input('housing_diameter', array('label' => 'Диаметр к�
 echo $this->Form->input('glass', array('label' => 'Стекло:'));
 echo $this->Form->input('dial_color', array('label' => 'Цвет циферблата:'));
 echo $this->Form->input('type_mechanism', array('label' => 'Тип механизма:'));
+?>
+
+<?php
 echo $this->Form->input('options', array('label' => 'Функции:'));
 echo $this->Form->input('power_reserve', array('label' => 'Запас хода:'));
 echo $this->Form->input('caliber', array('label' => 'Калибр:'));
@@ -89,6 +100,7 @@ echo $this->Form->input('band_material', array('label' => 'Материал ре
 	</select>
 </div>
 <?php
+echo $this->Form->input('deals', array('label' => 'Спецпредложение:', 'type' => 'checkbox'));
 echo $this->Form->end('Создать');
 ?>
 </div>

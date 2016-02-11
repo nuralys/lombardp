@@ -27,7 +27,7 @@ class NewsController extends AppController{
 			}
 		}
 	}
-	
+
 	public function admin_edit($id){
 		if(is_null($id) || !(int)$id || !$this->News->exists($id)){
 			throw new NotFoundException('Такой страницы нет...');
@@ -83,11 +83,7 @@ class NewsController extends AppController{
 		if(is_null($id) || !(int)$id || !$this->News->exists($id)){
 			throw new NotFoundException('Такой страницы нет...');
 		}
-		$post = $this->News->findById($id);
-		$news = $this->News->find('all', array(
-			'fields' => array('id', 'title')
-			));
-
-		$this->set(compact('post', 'news'));
+		$data = $this->News->findById($id);
+		$this->set(compact('data'));
 	}
 }
