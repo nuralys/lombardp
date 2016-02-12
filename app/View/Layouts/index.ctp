@@ -13,8 +13,8 @@
 	<?php 
 	echo $this->fetch('css');
 	echo $this->fetch('script');
-	echo $this->Html->css('style');
-	echo $this->Html->script(array('jquery-1.9.0.min', 'script'));
+	echo $this->Html->css(array('style','jquery.fancybox.css?v=2.1.5'));
+	echo $this->Html->script(array('jquery-1.9.0.min', 'script','jquery.fancybox.pack.js?v=2.1.5'));
 	 ?>	
 </head>
 <body>
@@ -25,5 +25,17 @@
 
 		<?php echo $this->element('footer'); ?>
 	</div>
+	<div id="modal1" class="modal_div"> <!-- скрытый див с уникальным id = modal1 -->
+	<span class="modal_close"></span>
+	<span class="title_z">Купить/Заказать</span>
+        <form method="POST" name="form1" action="form.php" >
+			<input  name="name"  maxlength="200" class="modal_f" type="text" size="1"  required placeholder="Имя..."/>
+			<input   name="phone"  maxlength="200" class="modal_f " type="text" size="1"  required placeholder="Номер..."/>
+			<input   name="mail"  maxlength="200" class="modal_f " type="text" size="1"  required placeholder="Почта..."/>
+			<textarea name="comment"  class="modal_f "cols="30" rows="10" required placeholder="Ваш комментарий..."></textarea>
+			<button type="submit"  name="submit1" >Отправить</button>
+		</form>
+	</div>
+	<div id="overlay"></div>
 </body>
 </html>
