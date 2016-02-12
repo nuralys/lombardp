@@ -16,7 +16,9 @@
 	outline: none;
 	vertical-align: top;
 }
-
+.fancybox-margin {
+    margin-right: auto!important;
+}
 .fancybox-wrap {
 	position: absolute;
 	top: 0;
@@ -164,18 +166,9 @@
 
 /* Overlay helper */
 
-.fancybox-lock {
-    overflow: hidden !important;
-    width: auto;
-}
 
-.fancybox-lock body {
-    overflow: hidden !important;
-}
 
-.fancybox-lock-test {
-    overflow-y: hidden !important;
-}
+
 
 .fancybox-overlay {
 	position: absolute;
