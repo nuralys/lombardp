@@ -17,9 +17,9 @@
 				<li class="inst">	
 					<a href="#"></a>
 				</li>
-				<li class="tw">	
+				<!-- <li class="tw">	
 					<a href="#"></a>
-				</li>
+				</li> -->
 			</ul>
 		</div>
 		<div class="f_bot">

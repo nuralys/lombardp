@@ -19,9 +19,9 @@
 				<li class="inst">	
 					<a href="#"></a>
 				</li>
-				<li class="tw">	
+				<!-- <li class="tw">	
 					<a href="#"></a>
-				</li>
+				</li> -->
 			</ul>
 			<div class="m_phone"></div>
 			<div class="m_search">
@@ -51,8 +51,8 @@
 						<input type="search" class="s_input" name="search" placeholder="Поиск"/>
 					</button>
 					<div class="num_text">
-						<a href="">+7 (495) 215-21-15 </a>
-						<a href="">8 (800) 555-95-99</a>
+						<a href="tel:+7 (701) 033-35-53">+7 (701) 033-35-53</a>
+						<a href="tel:+7 (777) 831-28-38">+7 (777) 831-28-38</a>
 						<button class="call_back" href="#">Перезвоните мне</button>
 					</div>
 				</div>

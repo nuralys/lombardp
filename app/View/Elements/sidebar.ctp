@@ -12,11 +12,11 @@
 					Отзывы
 				</a>
 			</li>
-			<li class="news_i">
+			<!-- <li class="news_i">
 				<a href="/news">
 					Новости
 				</a>
-			</li>
+			</li> -->
 			<li class="garant_i">
 				<a href="/article/guarantees">
 					Гарантии
